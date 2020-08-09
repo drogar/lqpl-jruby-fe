@@ -1,0 +1,34 @@
+qdata Coin      = {Heads | Tails}
+qdata Children = {Girl | Boy1 | Boy2}
+qdata Boolean  = {Tr | Fa}
+
+
+
+ice_cream::(b:Boolean ; result : Children) =
+{
+   case toss() of
+     Heads => {
+       case b of
+        Tr => {result = Girl}
+        Fa => {
+         case toss() of
+            Tr  => {result = Boy1}
+            Fa =>  {result = Boy2}
+        }
+    }
+    Tails => {
+      case b   of
+        Tr => {result = Boy1}
+        Fa => {result = Boy2}
+    }
+}
+
+toss ::( ; c:Coin) =
+{  q = |0>;
+   Had q;
+   measure q of
+     |0> => {c = Heads}
+     |1> => {c = Tails}
+}
+main::() =
+{  res = ice_cream(Fa)}
