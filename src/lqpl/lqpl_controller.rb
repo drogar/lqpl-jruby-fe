@@ -1,4 +1,13 @@
 # Main controller for the main controller class
+require 'application_controller'
+require 'about_controller'
+require 'simulate_results_controller'
+require 'stack_translation_controller'
+require 'classical_stack_controller'
+require 'dump_controller'
+require 'executing_code_controller'
+require 'quantum_stack_controller'
+
 class LqplController < ApplicationController
   DIALOGS = [AboutController, SimulateResultsController].freeze
   SUBS = [StackTranslationController, ClassicalStackController, DumpController,
