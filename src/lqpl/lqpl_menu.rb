@@ -1,8 +1,8 @@
 require 'architecture_factory'
+require 'platform_configuration'
+require 'import_java'
 
-%w[JMenuBar JMenu JMenuItem].each do |nm|
-  java_import 'javax.swing.' + nm
-end
+ImportJava.do_imports(context: self, swing: ['JMenu', 'JMenuBar', 'JMenuItem'])
 
 # menu handling and loading for the main screen
 class LqplMenu

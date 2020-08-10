@@ -1,3 +1,5 @@
+require 'panel_controller'
+
 # controller for the stack translation panel
 class StackTranslationController < PanelController
   set_model 'StackTranslationModel'

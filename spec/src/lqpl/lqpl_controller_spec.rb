@@ -1,3 +1,6 @@
+require 'lqpl_controller'
+require 'swing_runner'
+
 describe LqplController do
   before :each do
     SwingRunner.on_edt do

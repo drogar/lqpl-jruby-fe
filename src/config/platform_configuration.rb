@@ -35,7 +35,7 @@ class PlatformConfiguration
     return if tester.testing?
 
     on_mac do
-      System.set_property('apple.laf.useScreenMenuBar', 'true')
+      java.lang.System.set_property('apple.laf.useScreenMenuBar', 'true')
     end
   end
 end

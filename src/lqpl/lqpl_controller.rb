@@ -7,6 +7,11 @@ require 'classical_stack_controller'
 require 'dump_controller'
 require 'executing_code_controller'
 require 'quantum_stack_controller'
+require 'lqpl_model'
+require 'lqpl_view'
+require 'lqpl_menu'
+require 'lqpl_file_chooser'
+require 'exit_handler'
 
 class LqplController < ApplicationController
   DIALOGS = [AboutController, SimulateResultsController].freeze

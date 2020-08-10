@@ -1,3 +1,5 @@
+require 'lqpl_subs_handler'
+
 describe LqplSubsHandler do
   let(:c1) { double('c1') }
   let(:c2) { double('c2') }

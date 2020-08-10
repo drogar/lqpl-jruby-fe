@@ -1,3 +1,6 @@
+require 'lqpl_menu'
+require 'swing_runner'
+
 TESTMENU_STRUCTURE = {
   file: { menu_index: 0,
           menu_titles: %w[Load Compile Simulate],

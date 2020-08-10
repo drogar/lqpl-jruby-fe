@@ -1,3 +1,5 @@
+require 'application_model'
+
 JInteger = java.lang.Integer
 # model for the lqpl main screen.
 class LqplModel < ApplicationModel
