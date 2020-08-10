@@ -1,3 +1,4 @@
+require 'import_java'
 ImportJava.do_imports(context: self,
                       awt: %w[AlphaComposite BasicStroke Color Dimension Font Point Rectangle RenderingHints
                               font.TextAttribute geom.Dimension2D geom.Line2D geom.Ellipse2D geom.Rectangle2D image.BufferedImage],
@@ -51,7 +52,7 @@ module Lqpl
 
       def get_string_size(gcontext, text)
         case text
-        when AttributedCharacterIterator then
+        when AttributedCharacterIterator
           get_plain_font_string_size(gcontext, text)
         else gcontext.font.get_string_bounds(text, gcontext.font_render_context)
         end

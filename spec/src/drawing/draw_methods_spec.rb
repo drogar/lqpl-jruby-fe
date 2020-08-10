@@ -1,4 +1,5 @@
 require 'draw_methods'
+require 'drawing_extensions'
 
 describe Lqpl::Drawing::DrawMethods do
   let(:the_font) do
