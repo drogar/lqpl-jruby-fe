@@ -1,3 +1,6 @@
+require 'lqpl_controller'
+require 'swing_runner'
+
 # local class to run items in event thread
 class Drunner < GuiQuery
   # Launch the app in the Event Dispatch Thread (EDT),

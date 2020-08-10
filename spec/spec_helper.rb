@@ -1,4 +1,3 @@
-# require_relative '../GUI/src/config/manifest'
 require 'java'
 require 'english'
 require 'simplecov'

@@ -2,7 +2,7 @@
 module Swingtown
   # :stopdoc:
   VERSION = '0.3.0'.freeze
-  LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
+  LIBPATH = __dir__ + ::File::SEPARATOR
   PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
   # :startdoc:
 

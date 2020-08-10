@@ -12,6 +12,7 @@ require 'lqpl_view'
 require 'lqpl_menu'
 require 'lqpl_file_chooser'
 require 'exit_handler'
+require 'lqpl_subs_handler'
 
 class LqplController < ApplicationController
   DIALOGS = [AboutController, SimulateResultsController].freeze

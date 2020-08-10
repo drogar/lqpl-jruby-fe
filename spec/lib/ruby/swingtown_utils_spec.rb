@@ -4,7 +4,7 @@ describe Swingtown do
       expect(Swingtown::VERSION).to eq '0.3.0'
     end
     it 'sets PATH' do
-      expect(Swingtown::PATH =~ %r{GUI/lib/$}).not_to be_nil
+      expect(Swingtown::PATH =~ %r{lib/$}).not_to be_nil
     end
     it 'sets LIBPATH' do
       expect(Swingtown::LIBPATH).to eq(Swingtown::PATH + 'ruby/')
@@ -37,7 +37,7 @@ describe Swingtown do
       end
     end
     describe :find_mig_jar do
-      # under GUI/devlib
+      # under devlib
       let(:currloc) { Swingtown::LIBPATH }
       it 'raises an error if not found' do
         expect do
