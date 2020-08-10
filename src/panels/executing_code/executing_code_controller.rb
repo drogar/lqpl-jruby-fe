@@ -1,3 +1,7 @@
+require 'panel_controller'
+require 'executing_code_model'
+require 'executing_code_view'
+
 # controller to handle the executing code display
 class ExecutingCodeController < PanelController
   set_model 'ExecutingCodeModel'

@@ -1,6 +1,6 @@
 require 'specdata/stack_translation_data'
 require 'stack_translation_controller'
-require 'stack_translation_model'
+require 'swing_runner'
 
 describe StackTranslationController do
   before(:each) do

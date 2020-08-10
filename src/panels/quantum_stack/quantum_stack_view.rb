@@ -1,3 +1,4 @@
+require 'application_view'
 require 'quantum_stack_painter'
 require 'quantum_stack_form'
 

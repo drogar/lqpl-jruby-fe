@@ -1,3 +1,6 @@
+require 'executing_code_controller'
+require 'swing_runner'
+
 describe ExecutingCodeController do
   before(:each) do
     SwingRunner.on_edt do

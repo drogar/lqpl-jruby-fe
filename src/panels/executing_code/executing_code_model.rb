@@ -1,5 +1,7 @@
 require 'code_pointer'
 require 'ensure_json'
+require 'application_model'
+
 # model to show the executing code
 class ExecutingCodeModel < ApplicationModel
   attr_reader :the_code

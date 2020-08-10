@@ -2,6 +2,9 @@ require 'draw_methods'
 require 'descriptor_painter_factory'
 require 'copy_point'
 require 'canvas_size'
+require 'import_java'
+
+ImportJava.do_imports(context: self, awt: [ 'image.BufferedImage'] , swing: ['ImageIcon'])
 
 # paint that tree!
 class QuantumStackPainter

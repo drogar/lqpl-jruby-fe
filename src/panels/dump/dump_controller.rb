@@ -1,3 +1,7 @@
+require 'panel_controller'
+require 'dump_model'
+require 'dump_view'
+
 # controller for displaying the dump
 class DumpController < PanelController
   set_model 'DumpModel'

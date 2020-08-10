@@ -1,4 +1,9 @@
 require 'executing_code_form'
+require 'application_view'
+require 'code_pointer'
+require 'import_java'
+
+ImportJava.do_imports(context: self, swing: ['JScrollPane', 'JTextArea'])
 
 # View for the executing code - a tabbed vew pane
 class ExecutingCodeView < ApplicationView

@@ -95,8 +95,8 @@ TEST_QP_PATH = project_dir + '/testdata/qplprograms'
 # require 'config/platform_configuration'
 
 #    require 'component_query'
-#    require 'drawing_extensions'
-#    require 'raster_queries'
+require 'drawing_extensions'
+require 'raster_queries'
 
 RSpec.configure do |conf|
   conf.mock_with :rspec do |c|

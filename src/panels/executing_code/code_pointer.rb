@@ -1,3 +1,5 @@
+require 'application_model'
+
 # model to handle the code pointer
 class CodePointer < ApplicationModel
   attr_accessor :qpo_method

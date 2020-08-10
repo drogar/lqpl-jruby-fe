@@ -1,4 +1,5 @@
 require 'dump_form'
+require 'application_view'
 
 # View for the Dump
 class DumpView < ApplicationView

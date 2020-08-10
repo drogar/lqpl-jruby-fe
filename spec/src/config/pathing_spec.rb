@@ -11,7 +11,7 @@ describe Pathing do
        forms forms/components forms/dialogs forms/generic
        lqpl painting
        panels panels/classical_stack panels/dump panels/executing_code
-       panels/quantum_stack panels/quantumstack/descriptor panels/stack_translation
+       panels/quantum_stack panels/quantum_stack/descriptor panels/stack_translation
        utility].each do |dir|
       it "contains the #{dir} subdir" do
         Pathing.initialize_loadpath

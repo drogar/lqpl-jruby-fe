@@ -1,4 +1,5 @@
 require 'quantum_stack_view'
+require 'swing_runner'
 
 describe QuantumStackView do
   before :each do

@@ -1,3 +1,6 @@
+require 'panel_controller'
+require 'classical_stack_model'
+require 'classical_stack_view'
 # classical stack controller -
 class ClassicalStackController < PanelController
   set_model 'ClassicalStackModel'

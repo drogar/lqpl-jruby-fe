@@ -1,3 +1,8 @@
+require 'panel_controller'
+require 'stack_translation_controller'
+require 'quantum_stack_model'
+require 'quantum_stack_view'
+
 #  controls the drawing of the tree to do the quantum stack
 class QuantumStackController < PanelController
   set_model 'QuantumStackModel'

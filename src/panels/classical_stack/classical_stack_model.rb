@@ -1,3 +1,4 @@
+require 'application_model'
 # classical stack model
 # Currently just an html dump
 class ClassicalStackModel < ApplicationModel

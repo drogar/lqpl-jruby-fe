@@ -1,3 +1,6 @@
+require 'application_model'
+require 'ensure_json'
+
 # model for the Dump
 class DumpModel < ApplicationModel
   attr_reader :dump

@@ -1,3 +1,4 @@
+require 'application_view'
 require 'classical_stack_form'
 
 # classical stack

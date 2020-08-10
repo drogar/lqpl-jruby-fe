@@ -1,4 +1,5 @@
 require 'stack_translation_form'
+require 'application_view'
 
 # ST view, get the text out.
 class StackTranslationView < ApplicationView

@@ -1,4 +1,7 @@
 require 'scrollable_label'
+require 'import_java'
+
+ImportJava.do_imports(context: self, awt: ['Rectangle'])
 
 # Swing component to display the dump data
 class DumpForm < ScrollableLabel

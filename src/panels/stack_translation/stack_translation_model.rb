@@ -1,3 +1,6 @@
+require 'application_model'
+require 'ensure_json'
+
 # model for the stack translation display
 class StackTranslationModel < ApplicationModel
   attr_reader :stack_translation

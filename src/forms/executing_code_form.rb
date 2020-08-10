@@ -1,3 +1,6 @@
+require 'import_java'
+
+ImportJava.do_imports(context: self, awt: [ 'Rectangle'])
 # Swing component to display the executing code
 class ExecutingCodeForm < STFrame
   attr_accessor :code_tabbed_pane

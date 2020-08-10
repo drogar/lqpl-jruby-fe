@@ -1,5 +1,6 @@
 require 'panel_controller'
-
+require 'stack_translation_model'
+require 'stack_translation_view'
 # controller for the stack translation panel
 class StackTranslationController < PanelController
   set_model 'StackTranslationModel'

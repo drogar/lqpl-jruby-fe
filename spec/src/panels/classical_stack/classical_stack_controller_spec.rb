@@ -1,5 +1,6 @@
 require 'classical_stack_controller'
 require 'classical_stack_model'
+require 'swing_runner'
 
 describe ClassicalStackController do
   before(:each) do

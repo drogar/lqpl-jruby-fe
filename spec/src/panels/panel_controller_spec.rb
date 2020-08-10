@@ -1,3 +1,7 @@
+require 'panel_controller'
+require 'dump_controller'
+require 'swing_runner'
+
 describe PanelController do
   describe 'class methods' do
     describe 'class_name_to_sym' do

@@ -1,4 +1,6 @@
 require 'descriptor_model_factory'
+require 'application_model'
+require 'ensure_json'
 #  model for the tree to do the quantum stack
 class QuantumStackModel < ApplicationModel
   attr_accessor :substacks

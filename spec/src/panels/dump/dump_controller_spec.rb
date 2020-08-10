@@ -1,6 +1,7 @@
 require 'specdata/dump_data'
 require 'dump_controller'
 require 'dump_model'
+require 'swing_runner'
 
 describe DumpController do
   before(:each) do

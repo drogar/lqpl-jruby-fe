@@ -1,6 +1,7 @@
 require 'specdata/quantum_stack_data'
 require 'quantum_stack_controller'
 require 'quantum_stack_model'
+require 'swing_runner'
 
 describe QuantumStackController do
   before(:each) do
