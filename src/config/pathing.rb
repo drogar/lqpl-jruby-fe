@@ -4,12 +4,12 @@ class Pathing
   DIRECTORIES = %w[communications config dialogs dialogs/about dialogs/simulate_results drawing exceptions forms lqpl
                    painting panels panels/classical_stack panels/dump panels/executing_code
                    panels/quantum_stack panels/quantumstack/descriptor panels/stack_translation
-                   panels/utility].freeze
+                   utility].freeze
 
 
   attr_reader :pathing_location
 
-  def self.add_to_loadpath
+  def self.initialize_loadpath
     return if @loadpath_set
 
     @loadpth_set = true

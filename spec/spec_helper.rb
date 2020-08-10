@@ -79,10 +79,13 @@ require 'monkeybars'
 require 'config/manifest'
 require 'utility/logger'
 require 'config/pathing'
+
+Pathing.initialize_loadpath
+
+require 'resolver'
+
 # require 'swing_runner'
 # require 'lqpl_controller'
-
-#require_relative '../src/config/manifest'
 
 TEST_QP_PATH = project_dir + '/testdata/qplprograms'
 

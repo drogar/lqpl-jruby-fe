@@ -1,6 +1,8 @@
 require 'singleton'
 require 'socket'
 
+require 'server_process_not_found'
+
 java_import java.lang.ProcessBuilder
 java_import com.drogar.lqpl.Main
 java_import java.net.URLDecoder

@@ -10,9 +10,9 @@ describe Pathing do
     %w[communications config dialogs dialogs/about dialogs/simulate_results drawing exceptions forms lqpl
        painting panels panels/classical_stack panels/dump panels/executing_code
        panels/quantum_stack panels/quantumstack/descriptor panels/stack_translation
-       panels/utility].each do |dir|
+       utility].each do |dir|
       it "contains the #{dir} subdir" do
-        Pathing.add_to_loadpath
+        Pathing.initialize_loadpath
         expect($LOAD_PATH).to include(BASE_PATH + '/' + dir)
       end
     end
