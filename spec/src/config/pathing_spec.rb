@@ -7,8 +7,10 @@ describe Pathing do
     expect(Pathing).not_to be_nil
   end
   describe 'set_loadpath' do
-    %w[communications config dialogs dialogs/about dialogs/simulate_results drawing exceptions forms lqpl
-       painting panels panels/classical_stack panels/dump panels/executing_code
+    %w[communications config dialogs dialogs/about dialogs/simulate_results drawing exceptions
+       forms forms/components forms/dialogs forms/generic
+       lqpl painting
+       panels panels/classical_stack panels/dump panels/executing_code
        panels/quantum_stack panels/quantumstack/descriptor panels/stack_translation
        utility].each do |dir|
       it "contains the #{dir} subdir" do

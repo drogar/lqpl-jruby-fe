@@ -1,3 +1,4 @@
+require 'application_controller'
 # Controller for the about dialog
 class AboutController < ApplicationController
   set_model 'AboutModel'

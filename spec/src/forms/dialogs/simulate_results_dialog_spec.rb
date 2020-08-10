@@ -2,9 +2,9 @@ require 'simulate_results_dialog'
 
 describe SimulateResultsDialog do
   before :each do
-    SwingRunner.on_edt do
+    #    SwingRunner.on_edt do
       @sr = SimulateResultsDialog.new
-    end
+      #   end
   end
 
   it 'should not be nil' do

@@ -1,11 +1,12 @@
 class Pathing
   JAR_PREFIX = 'uri:classloader:'.freeze
 
-  DIRECTORIES = %w[communications config dialogs dialogs/about dialogs/simulate_results drawing exceptions forms lqpl
-                   painting panels panels/classical_stack panels/dump panels/executing_code
+  DIRECTORIES = %w[communications config dialogs dialogs/about dialogs/simulate_results drawing exceptions
+                   forms forms/components forms/dialogs forms/generic
+                   lqpl painting
+                   panels panels/classical_stack panels/dump panels/executing_code
                    panels/quantum_stack panels/quantumstack/descriptor panels/stack_translation
                    utility].freeze
-
 
   attr_reader :pathing_location
 

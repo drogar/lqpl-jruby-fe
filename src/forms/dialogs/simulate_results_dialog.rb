@@ -1,3 +1,7 @@
+require 'import_java'
+ImportJava.do_imports(context: self, awt: [ 'Rectangle'] , swing: ['BoxLayout'])
+
+
 # Swing Dialog for Simulate Results
 class SimulateResultsDialog < STDialogWithOK
   attr_accessor :random_value_label
@@ -17,7 +21,7 @@ class SimulateResultsDialog < STDialogWithOK
   end
 
   def panel_layout(panelref)
-    BoxLayout.new(panelref, BoxLayout::Y_AXIS)
+    ::BoxLayout.new(panelref, ::BoxLayout::Y_AXIS)
   end
 
   def make_rv_label(cpanel)

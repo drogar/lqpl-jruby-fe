@@ -329,7 +329,7 @@ module Swingtown
       def initialize(title = nil)
         super(title, false)
         root_pane.content_pane = Panel.new do |cpane|
-          cpane.layout = BoxLayout.new(cpane, BoxLayout::Y_AXIS)
+          cpane.layout = Java.javax.swing.BoxLayout.new(cpane, Java.javax.swing.BoxLayout::Y_AXIS)
 
           self.data_pane = Panel.new { |dp| cpane.add(dp) }
           create_button_ok_pane(cpane)

@@ -68,6 +68,8 @@ $CLASSPATH << project_dir + '/out/lqpl_gui/'
   $CLASSPATH << project_dir + '/devlib/java/' + jar + '.jar'
 end
 
+$CLASSPATH << project_dir + 'src/dialogs/simulate_results'
+
 require 'java'
 require 'fest-swing-1.2.jar'
 
@@ -83,6 +85,7 @@ require 'config/pathing'
 Pathing.initialize_loadpath
 
 require 'resolver'
+require 'swingtown'
 
 # require 'swing_runner'
 # require 'lqpl_controller'

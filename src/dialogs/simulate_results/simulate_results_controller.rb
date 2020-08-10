@@ -1,3 +1,6 @@
+require 'application_controller'
+require 'simulate_results_model'
+require 'simulate_results_view'
 # Class to control the simulate results dialog
 class SimulateResultsController < ApplicationController
   set_model 'SimulateResultsModel'
