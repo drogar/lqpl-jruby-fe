@@ -1,4 +1,4 @@
-require 'server_process_not_found'
+require 'connection'
 
 describe Connection do
   before :each do

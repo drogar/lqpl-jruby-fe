@@ -1,3 +1,4 @@
+require 'lqpl_emulator_server_connection'
 describe LqplEmulatorServerConnection do
   context 'creation' do
     context 'enforce singleton' do

@@ -1,3 +1,4 @@
+require 'compiler_server_connection'
 describe CompilerServerConnection do
   context 'creation' do
     context 'enforce singleton' do
