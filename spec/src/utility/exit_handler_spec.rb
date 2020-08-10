@@ -1,3 +1,7 @@
+require 'exit_handler'
+require 'compiler_server_connection'
+require 'lqpl_emulator_server_connection'
+
 describe ExitHandler do
   describe 'close_servers' do
     it 'should close the compiler server connection' do

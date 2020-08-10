@@ -1,3 +1,6 @@
+require 'ensure_json'
+require 'application_model'
+
 describe EnsureJSON do
   context 'creation' do
     it 'accepts a string for new' do

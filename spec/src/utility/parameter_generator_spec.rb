@@ -1,3 +1,5 @@
+require 'parameter_generator'
+
 describe ParameterGenerator do
   context 'no parameters' do
     subject { ParameterGenerator.new }

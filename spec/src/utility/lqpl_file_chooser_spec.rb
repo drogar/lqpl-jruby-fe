@@ -1,3 +1,9 @@
+require 'lqpl_file_chooser'
+require 'swing_runner'
+require 'import_java'
+ImportJava.do_imports(context: self, swing: ['JFileChooser'])
+
+
 describe LqplFileChooser do
   describe 'class method opener' do
     before :each do

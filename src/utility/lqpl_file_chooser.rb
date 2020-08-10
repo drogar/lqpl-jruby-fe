@@ -1,4 +1,7 @@
 require 'forwardable'
+require 'import_java'
+ImportJava.do_imports(context: self, swing: ['JFileChooser', 'filechooser.FileNameExtensionFilter'])
+
 # class to wrap a jfile chooser
 class LqplFileChooser
   def self.lqpl_assembled_file_opener
