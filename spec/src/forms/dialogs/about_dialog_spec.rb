@@ -1,4 +1,5 @@
 require 'about_dialog'
+require 'swing_runner'
 
 describe AboutDialog do
   before :each do
@@ -12,7 +13,7 @@ describe AboutDialog do
   end
 
   it "should have a title of 'About LQPL'" do
-    expect(@ab.edt_title).to eq('About LQPL')
+    expect(@ab.get_title).to eq('About LQPL')
   end
 
   specify { expect(@ab.data_pane.components.size).to eql(1) }

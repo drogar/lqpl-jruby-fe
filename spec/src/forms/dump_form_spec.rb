@@ -1,4 +1,5 @@
 require 'dump_form'
+require 'swing_runner'
 
 describe DumpForm do
   before :each do

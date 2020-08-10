@@ -1,5 +1,6 @@
 require 'scrollable_label'
-
+require 'import_java'
+ImportJava.do_imports(context: self, awt: [ 'Rectangle'])
 # Swing for to display the classical stack
 class ClassicalStackForm < ScrollableLabel
   def initialize

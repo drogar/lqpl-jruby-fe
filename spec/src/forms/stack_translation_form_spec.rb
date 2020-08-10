@@ -1,4 +1,5 @@
 require 'stack_translation_form'
+require 'swing_runner'
 
 describe StackTranslationForm do
   before :each do

@@ -1,4 +1,6 @@
 require 'quantum_stack_panel'
+require 'swing_runner'
+
 describe QuantumStackPanel do
   before :each do
     SwingRunner.on_edt do

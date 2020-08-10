@@ -1,4 +1,5 @@
 require 'quantum_stack_form'
+require 'swing_runner'
 
 describe QuantumStackForm do
   before :each do

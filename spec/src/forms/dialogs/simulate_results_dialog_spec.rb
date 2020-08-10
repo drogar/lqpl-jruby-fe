@@ -2,9 +2,9 @@ require 'simulate_results_dialog'
 
 describe SimulateResultsDialog do
   before :each do
-    #    SwingRunner.on_edt do
+    SwingRunner.on_edt do
       @sr = SimulateResultsDialog.new
-      #   end
+    end
   end
 
   it 'should not be nil' do
@@ -12,7 +12,7 @@ describe SimulateResultsDialog do
   end
 
   it "should have a title of 'Simulate Results'" do
-    expect(@sr.edt_title).to eq('Simulate Results')
+    expect(@sr.get_title).to eq('Simulate Results')
   end
   specify { expect(@sr.data_pane.components.size).to eql(1) }
   specify { expect(@sr.data_pane.components[0].components.size).to eql(2) }

@@ -1,5 +1,5 @@
 require 'classical_stack_form'
-
+require 'swing_runner'
 describe ClassicalStackForm do
   before :each do
     SwingRunner.on_edt do

@@ -1,3 +1,6 @@
+require 'quantum_emulator_main_form'
+require 'swing_runner'
+
 describe QuantumEmulatorMainForm do
   before :each do
     SwingRunner.on_edt do

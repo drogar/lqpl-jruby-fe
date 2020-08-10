@@ -1,3 +1,7 @@
+require 'import_java'
+
+ImportJava.do_imports(context: self, awt: ['GridLayout', 'Rectangle'] , swing: ['BoxLayout', 'JTextArea'])
+
 # Swing frame to display the main form with controls for running the quantum emulator
 class QuantumEmulatorMainForm < STFrame
   attr_accessor :spinner_panel, :button_panel, :step_spinner, :recursion_spinner,
