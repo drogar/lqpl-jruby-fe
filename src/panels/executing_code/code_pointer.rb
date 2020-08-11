@@ -2,10 +2,10 @@ require 'application_model'
 
 # model to handle the code pointer
 class CodePointer < ApplicationModel
-  attr_accessor :qpo_method
-  attr_accessor :line_number
+  attr_accessor :qpo_method, :line_number
 
   def initialize(in_string)
+    super
     cp_match = EnsureJSON.new(in_string).as_json
     initialize_method_and_line(cp_match)
   rescue JSON::ParserError => e

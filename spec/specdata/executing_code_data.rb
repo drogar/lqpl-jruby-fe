@@ -5,8 +5,8 @@ KVPAIRS_2 = '{"main": ["EnScope"], "cflip_fcdelbl0": ["EnScope","QLoad \"@q\" 0"
 
 CMAP_SINGLE = '{"main": ["EnScope"]}'.freeze
 
-CMAP_6 = '{"main": [' + KVPS6 + ']}'
+CMAP_6 = %({"main": [#{KVPS6}]})
 
-CMAP_2x6 = '{"main": [' + KVPS6 + ', ' + KVPS6 + ']}'
+CMAP_2x6 = %({"main": [#{KVPS6}, #{KVPS6}]})
 
 CMAP_2 = KVPAIRS_2

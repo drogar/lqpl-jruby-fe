@@ -7,7 +7,7 @@ describe Swingtown do
       expect(Swingtown::PATH =~ %r{lib/$}).not_to be_nil
     end
     it 'sets LIBPATH' do
-      expect(Swingtown::LIBPATH).to eq(Swingtown::PATH + 'ruby/')
+      expect(Swingtown::LIBPATH).to eq("#{Swingtown::PATH}ruby/")
     end
   end
   describe 'module methods' do
@@ -20,9 +20,9 @@ describe Swingtown do
       end
       it 'joins any args with file separator and adds to the FILEPATH' do
         fs = ::File::SEPARATOR
-        expect(Swingtown.libpath('a')).to eq Swingtown::LIBPATH + 'a'
-        expect(Swingtown.libpath('a', 'b')).to eq Swingtown::LIBPATH + 'a' + fs + 'b'
-        expect(Swingtown.libpath('a', 'b', 'cdefg')).to eq Swingtown::LIBPATH + 'a' + fs + 'b' + fs + 'cdefg'
+        expect(Swingtown.libpath('a')).to eq "#{Swingtown::LIBPATH}a"
+        expect(Swingtown.libpath('a', 'b')).to eq "#{Swingtown::LIBPATH}a#{fs}b"
+        expect(Swingtown.libpath('a', 'b', 'cdefg')).to eq "#{Swingtown::LIBPATH}a#{fs}b#{fs}cdefg"
       end
       describe :path do
         it 'returns PATH with no args' do
@@ -30,9 +30,9 @@ describe Swingtown do
         end
         it 'joins any args with file separator and adds to the FILEPATH' do
           fs = ::File::SEPARATOR
-          expect(Swingtown.path('a')).to eq Swingtown::PATH + 'a'
-          expect(Swingtown.path('a', 'b')).to eq Swingtown::PATH + 'a' + fs + 'b'
-          expect(Swingtown.path('a', 'b', 'cdefg')).to eq Swingtown::PATH + 'a' + fs + 'b' + fs + 'cdefg'
+          expect(Swingtown.path('a')).to eq  "#{Swingtown::PATH}a"
+          expect(Swingtown.path('a', 'b')).to eq "#{Swingtown::PATH}a#{fs}b"
+          expect(Swingtown.path('a', 'b', 'cdefg')).to eq "#{Swingtown::LIBPATH}a#{fs}b#{fs}cdefg"
         end
       end
     end

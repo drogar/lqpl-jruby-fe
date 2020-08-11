@@ -1,6 +1,6 @@
 require 'import_java'
 
-ImportJava.do_imports(context: self, awt: ['GridLayout', 'Rectangle'] , swing: ['BoxLayout', 'JTextArea'])
+ImportJava.do_imports(context: self, awt: ['GridLayout', 'Rectangle'], swing: ['BoxLayout', 'JTextArea'])
 
 # Swing frame to display the main form with controls for running the quantum emulator
 class QuantumEmulatorMainForm < STFrame
@@ -52,7 +52,7 @@ class QuantumEmulatorMainForm < STFrame
   def make_a_spinner(key, options, parent)
     model = options
     model[:container] = parent
-    send(key.to_s + '_spinner=',
+    send("#{key}_spinner=",
          Spinner.spinner_with_label_and_model(options[:name], model))
   end
 

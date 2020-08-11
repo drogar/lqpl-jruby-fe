@@ -3,7 +3,7 @@ require 'rake/clean'
 abort 'Sorry - Building LQPL requires JRuby. You are using some other ruby engine.' unless defined? RUBY_ENGINE && RUBY_ENGINE == 'jruby'
 
 Dir.glob('tasks/**/*.rake').each do |rake_file|
-  load File.expand_path(File.dirname(__FILE__) + '/' + rake_file)
+  load File.expand_path("#{File.dirname(__FILE__)}/#{rake_file}")
 end
 
 # Dir.glob("tasks/**/*.rake").each do |rake_file|

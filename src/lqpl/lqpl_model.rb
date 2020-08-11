@@ -9,6 +9,7 @@ class LqplModel < ApplicationModel
                 :view_menu_stack_translation_text, :compiler_connection, :lqpl_server_connection
 
   def initialize
+    super
     init_panels
     init_spinners
     init_buttons
@@ -67,7 +68,7 @@ class LqplModel < ApplicationModel
   end
 
   def self.new_view_command(current_command)
-    toggle_action(current_command[0]) + ' ' + last_elements_of_command(current_command)
+    "#{toggle_action(current_command[0])} #{last_elements_of_command(current_command)}"
   end
 
   def self.last_elements_of_command(command)

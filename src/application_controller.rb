@@ -2,7 +2,7 @@
 class ApplicationController < Monkeybars::Controller
   java_signature 'Object lqpl_emulator_server_connection()'
 
-  def lqpl_emulator_server_connection(connect = true)
+  def lqpl_emulator_server_connection(connect: true)
     if connect
       @lqpl_emulator_server_connection ||= LqplEmulatorServerConnection.instance
       @lqpl_emulator_server_connection.connect unless @lqpl_emulator_server_connection.connected?

@@ -7,7 +7,6 @@ gem 'swingset', source: 'http://gems.neurogami.com/'
 # dependency - ensure we use the right location
 gem 'rawr', source: 'http://gems.neurogami.com/'
 
-
 group :test, :development do
   gem 'cucumber'
   gem 'fuubar' # rspec formatter

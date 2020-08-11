@@ -13,7 +13,7 @@ class ParameterGenerator
   def parameters_for_definition
     return '' if @parms == []
 
-    '(' + joined_parameter_strings + ')'
+    "(#{joined_parameter_strings})"
   end
 
   private

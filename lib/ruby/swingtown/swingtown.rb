@@ -17,6 +17,7 @@ module Swingtown
     end
 
     def self.included(base)
+      super
       base.extend(MiG::ClassMethods)
     end
 
@@ -140,6 +141,7 @@ module Swingtown
       JINT = Java.int
       SPINNER_CONS = Java.javax.swing.SpinnerNumberModel.java_class.constructor(JINT, JINT, JINT, JINT)
       attr_accessor :label
+
       def self.make_new_spinner_number_model(args)
         SPINNER_CONS.new_instance(args[0], args[1], args[2], args[3])
       end
@@ -313,9 +315,8 @@ module Swingtown
 
     # Extend dialog, have an ok button
     class STDialogWithOK < STDialog
-      attr_accessor :button_pane
-      attr_accessor :ok_button
-      attr_accessor :data_pane
+      attr_accessor :button_pane, :ok_button, :data_pane
+
       def create_button_ok_pane(parent_pane)
         @button_pane = Panel.new do |bp|
           @ok_button = Button.new('OK') do |b|
@@ -326,12 +327,16 @@ module Swingtown
         end
       end
 
+      def create_panes(cpane)
+        cpane.layout = Java.javax.swing.BoxLayout.new(cpane, Java.javax.swing.BoxLayout::Y_AXIS)
+
+        self.data_pane = Panel.new { |dp| cpane.add(dp) }
+      end
+
       def initialize(title = nil)
         super(title, false)
         root_pane.content_pane = Panel.new do |cpane|
-          cpane.layout = Java.javax.swing.BoxLayout.new(cpane, Java.javax.swing.BoxLayout::Y_AXIS)
-
-          self.data_pane = Panel.new { |dp| cpane.add(dp) }
+          create_panes(cpane)
           create_button_ok_pane(cpane)
         end
         yield data_pane if block_given?

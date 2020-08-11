@@ -6,9 +6,7 @@ ImportJava.do_imports(context: self, swing: ['JMenu', 'JMenuBar', 'JMenuItem'])
 
 # menu handling and loading for the main screen
 class LqplMenu
-  attr_accessor :view_classical_stack, :view_dump, :view_executing_code, :view_stack_translation
-
-  attr_accessor :mbar, :file_compile, :file_load, :file_simulate
+  attr_accessor :view_classical_stack, :view_dump, :view_executing_code, :view_stack_translation, :mbar, :file_compile, :file_load, :file_simulate
 
   # next are for win/linux only. Mac is handled in lqpl_controller
   attr_accessor :file_exit, :help_about

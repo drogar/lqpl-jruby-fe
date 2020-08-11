@@ -1,21 +1,20 @@
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.5
   Exclude:
   - out/**/*
   - dist/**/*
   - tmp/**/*
+  - lib/ruby/monkeybars.rb
+  - lib/ruby/monkeybars/*
 
   # See https://github.com/bbatsov/rubocop for details
 
+Layout/LineLength:
+  Max: 160
+
 Layout/SpaceBeforeFirstArg:
   AllowForAlignment: true  # Prefer to align args in multiple calls in a row
-
-Metrics/ParameterLists:
-  Max: 5
-  CountKeywordArgs: false
-
-Metrics/LineLength:
-  Max: 160
 
 Metrics/BlockLength:
   CountComments: false  # count full line comments?
@@ -24,6 +23,10 @@ Metrics/BlockLength:
     - 'Rakefile'
     - '**/*.rake'
     - '**/*spec.rb'
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: false
 
 Style/Alias:
   Enabled: false # allow alias or alias_method
@@ -37,14 +40,14 @@ Style/FrozenStringLiteralComment:
 Style/GlobalVars:
   AllowedVariables: [$qe_frame]
 
-Style/StringLiterals:
-  Enabled: false  # See recent test in http://viget.com/extend/just-use-double-quoted-ruby-strings
-
-Style/WordArray:
-  MinSize: 4
-
 Style/SignalException:
   Enabled: false # Quit complaining about raise.
 
+Style/StringLiterals:
+  Enabled: false  # See recent test in http://viget.com/extend/just-use-double-quoted-ruby-strings
+
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma # trailing comma reduces the number of commit changes when adding to a list
+
+Style/WordArray:
+  MinSize: 4

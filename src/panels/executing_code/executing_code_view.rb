@@ -12,8 +12,7 @@ class ExecutingCodeView < ApplicationView
 
   raw_mapping :set_up_tabbed_views, nil
 
-  attr_accessor :qpo_method_to_tab_map
-  attr_accessor :qpo_method_and_line_to_selection_start_and_end_map
+  attr_accessor :qpo_method_to_tab_map, :qpo_method_and_line_to_selection_start_and_end_map
 
   def set_up_tabbed_views(model, _transfer)
     create_tabbed_views(model.the_code) if model.the_code_was_updated?

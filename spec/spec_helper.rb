@@ -51,23 +51,24 @@ project_dir = project_dir_array.reverse.drop(1).reverse.join(File::SEPARATOR)
 
 $LOAD_PATH << project_dir
 
-%w[src lib/java lib/ruby devlib/java devlib/ruby].each do |dir|
-  $LOAD_PATH << project_dir + '/' + dir
+%w[/src /lib/java /lib/ruby /devlib/java /devlib/ruby].each do |dir|
+  $LOAD_PATH << project_dir + dir
 end
 
 # java classpath
-$CLASSPATH << project_dir + '/lib/java/jruby-complete.jar'
-$CLASSPATH << project_dir + '/lib/java/foxtrot-core-4.0.jar'
 $CLASSPATH << project_dir
-$CLASSPATH << project_dir + '/out/lqpl_gui/'
+
+%w[src /lib/java/jruby-complete.jar /lib/java/foxtrot-core-4.0.jar /out/lqpl_gui/].each do |sub|
+  $CLASSPATH << project_dir + sub
+end
 
 # testing jars
 %w[fest-swing-1.2 fest-assert-1.2 fest-reflect-1.2
    fest-util-1.1.2 jcip-annotations-1.0].each do |jar|
-  $CLASSPATH << project_dir + '/devlib/java/' + jar + '.jar'
+  $CLASSPATH << "#{project_dir}/devlib/java/#{jar}.jar"
 end
 
-$CLASSPATH << project_dir + 'src/dialogs/simulate_results'
+$CLASSPATH << "#{project_dir}/src/dialogs/simulate_results"
 
 require 'java'
 require 'fest-swing-1.2.jar'
@@ -89,7 +90,7 @@ require 'swingtown'
 # require 'swing_runner'
 # require 'lqpl_controller'
 
-TEST_QP_PATH = project_dir + '/testdata/qplprograms'
+TEST_QP_PATH = "#{project_dir}/testdata/qplprograms"
 
 # require 'config/platform_configuration'
 

@@ -13,9 +13,9 @@ class DumpModel < ApplicationModel
 
   def text
     inside = @dump.map do |ditem|
-      '<li>' + DumpModel.make_text(ditem) + '</li>'
+      "<li>#{DumpModel.make_text(ditem)}</li>"
     end
-    '<html><ol>' + inside.join('') + '</ol></html>'
+    "<html><ol>#{inside.join('')}</ol></html>"
   end
 
   def self.make_text(dump_hash)

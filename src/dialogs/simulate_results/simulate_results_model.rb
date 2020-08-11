@@ -8,7 +8,7 @@ class SimulateResultsModel
 
   def simulate_results_text
     inner = (@simulate_results || []).map { |sr| "#{sr[0]}(#{sr[1]}) = #{sr[2]}" }
-    '<html>' + inner.join('<br />') + '</html>'
+    "<html>#{inner.join('<br />')}</html>"
   end
 
   def random_value_text

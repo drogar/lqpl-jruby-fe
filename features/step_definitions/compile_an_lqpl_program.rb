@@ -7,11 +7,11 @@ Given(/^I select "([a-zA-Z\s]*)" from the "([a-zA-Z]*)" menu$/) do |mitem, menu|
   sleep 0.25
 end
 
-And(%r{^I load "([\w\.]*?\....)" from the project directory "([\w\s\/]*)"$}) do |file, dir|
+And(%r{^I load "([\w.]*?\....)" from the project directory "([\w\s/]*)"$}) do |file, dir|
   approve_file(dir, file)
 end
 
-file_create_matcher = %r{^"([\w\s]*?\.qpo)" should be created in the project directory "([\w\s/]*)" and be equal to "([\w\s\.]*?\.qpo)"$}
+file_create_matcher = %r{^"([\w\s]*?\.qpo)" should be created in the project directory "([\w\s/]*)" and be equal to "([\w\s.]*?\.qpo)"$}
 Then(file_create_matcher) do |outfile, outdir, reference|
   the_file = File.file_in_project_subdir(outdir, outfile)
 

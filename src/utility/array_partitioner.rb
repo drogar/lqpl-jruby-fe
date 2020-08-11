@@ -3,6 +3,7 @@ module Lqpl
     # class to help partition array to assist with drawing the tree and computing sizes
     class ArrayPartitioner
       attr_accessor :array
+
       def initialize(array)
         self.array = array
       end

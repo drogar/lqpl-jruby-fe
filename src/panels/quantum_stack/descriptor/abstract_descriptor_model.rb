@@ -2,10 +2,10 @@ require 'application_model'
 require 'ensure_json'
 # abstract base for the descriptor models
 class AbstractDescriptorModel < ApplicationModel
-  attr_accessor :value
-  attr_accessor :name
+  attr_accessor :value, :name
 
   def initialize
+    super
     raise ModelCreateError
   end
 

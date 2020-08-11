@@ -31,31 +31,30 @@ project_dir_array = __dir__.split(File::SEPARATOR)
 
 project_dir = project_dir_array.reverse.drop(2).reverse.join(File::SEPARATOR)
 
-%w[src lqpl_gui lib/java lib/ruby devlib/java devlib/ruby].each do |dir|
-  $LOAD_PATH << project_dir + '/GUI/' + dir
+%w[/src /lqpl_gui /lib/java /lib/ruby /devlib/java /devlib/ruby /out/lqpl_gui].each do |dir|
+  $LOAD_PATH << project_dir + dir
 end
-$LOAD_PATH << project_dir + '/out/lqpl_gui'
 
 require 'java'
 
-$CLASSPATH << project_dir + '/out/lqpl_gui'
+$CLASSPATH << "#{project_dir}/out/lqpl_gui"
 
-# runtime jars
-%w[jruby-complete monkeybars-1.1.1].each do |jar|
-  $CLASSPATH << project_dir + '/GUI/lib/java/' + jar + '.jar'
+# runtime  and testing
+%w[jruby-complete monkeybars-1.3.3 foxtrot-core-4.0].each do |jar|
+  $CLASSPATH << "#{project_dir}/lib/java/#{jar}.jar"
 end
 
-# testing jars
 %w[fest-swing-1.2 fest-assert-1.2 fest-reflect-1.2
-   fest-util-1.1.2 jcip-annotations-1.0].each do |jar|
-  $CLASSPATH << project_dir + '/GUI/devlib/java/' + jar + '.jar'
+   fest-util-1.1.2
+   jcip-annotations-1.0].each do |jar|
+  $CLASSPATH << "#{project_dir}/devlib/java/#{jar}.jar"
 end
 
 require 'fest-swing-1.2.jar'
 
-require 'monkeybars-1.1.1.jar'
+require 'monkeybars-1.3.3.jar'
 
-ENV['PATH'] = "#{project_dir + '/out/bin'}#{File::PATH_SEPARATOR}#{ENV['PATH']}"
+ENV['PATH'] = "#{project_dir}/out/bin#{File::PATH_SEPARATOR}#{ENV['PATH']}"
 
 require 'fest_testing_imports'
 

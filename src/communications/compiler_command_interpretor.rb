@@ -3,9 +3,7 @@ require 'json'
 # handle the transmision and actions of commands from the connection
 class CompilerCommandInterpretor
   attr_accessor :failure_message
-  attr_reader :connection
-  attr_reader :object_file_name
-  attr_reader :dir, :qpo_file_name, :qpl_file_name
+  attr_reader :connection, :object_file_name, :dir, :qpo_file_name, :qpl_file_name
 
   def initialize(connection)
     @connection = connection
@@ -74,13 +72,13 @@ class CompilerCommandInterpretor
   end
 
   def qpo(code)
-    File.write(qpo_file_name, ([current_version_line] + code).join("\n") + "\n")
+    File.write(qpo_file_name, "#{([current_version_line] + code).join("\n")}\n")
     nil
   end
 
   def current_version_line
     version = connection.send_and_read_data '{"command" : "send_version"}'
-    'Compiler: Version=' + CompilerCommandInterpretor.make_version_number(version)
+    "Compiler: Version=#{CompilerCommandInterpretor.make_version_number(version)}"
   end
 
   def self.make_version_number(json_string)

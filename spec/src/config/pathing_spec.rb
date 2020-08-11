@@ -1,6 +1,6 @@
 require 'config/pathing'
 
-BASE_PATH = '/Users/gilesb/Dropbox/programming/mixed/lqpl-fe-jruby/src'.freeze
+BASE_PATH = '/Users/gilesb/Dropbox/programming/mixed/lqpl-fe-jruby/src/'.freeze
 
 describe Pathing do
   it 'is valid' do
@@ -15,7 +15,7 @@ describe Pathing do
        utility].each do |dir|
       it "contains the #{dir} subdir" do
         Pathing.initialize_loadpath
-        expect($LOAD_PATH).to include(BASE_PATH + '/' + dir)
+        expect($LOAD_PATH).to include(BASE_PATH  + dir)
       end
     end
   end
@@ -23,8 +23,7 @@ describe Pathing do
     subject { Pathing.new }
     let(:here) { __dir__ }
     describe :pathing_location do
-      it 'is the path of the pathing.rb file' do
-
+      xit 'is the path of the pathing.rb file' do
       end
     end
     describe :base_path do

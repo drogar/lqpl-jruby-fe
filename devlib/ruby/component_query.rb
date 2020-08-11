@@ -36,10 +36,10 @@ def define_edt_query_class(name)
     class_name.constatize
   rescue NameError
     method_call_name = name.to_s.chomp('?')
-    method_call_name = 'is_' + method_call_name if method_call_name.size < name.to_s.size
-    # rubocop:disable Eval
+    method_call_name = "is_#{method_call_name}" if method_call_name.size < name.to_s.size
+    # rubocop:disable Security/Eval
     eval query_class_template(class_name, method_call_name), TOPLEVEL_BINDING
-    # rubocop:enable Eval
+    # rubocop:enable Security/Eval
   end
 end
 

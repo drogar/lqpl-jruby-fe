@@ -4,8 +4,7 @@ require 'application_model'
 
 # model to show the executing code
 class ExecutingCodeModel < ApplicationModel
-  attr_reader :the_code
-  attr_reader :the_code_pointer
+  attr_reader :the_code, :the_code_pointer
   attr_accessor :the_code_was_updated
   alias the_code_was_updated? the_code_was_updated
 
@@ -27,7 +26,7 @@ class ExecutingCodeModel < ApplicationModel
   private
 
   def build_code(code_as_json)
-    Hash[code_as_json.map { |k, v| [k, format_code_method(v)] }]
+    code_as_json.transform_values { |v| format_code_method(v) }
   end
 
   def format_code_method(code_line_array)

@@ -1,11 +1,9 @@
 require 'import_java'
-ImportJava.do_imports(context: self, awt: [ 'Rectangle'] , swing: ['BoxLayout'])
-
+ImportJava.do_imports(context: self, awt: ['Rectangle'], swing: ['BoxLayout'])
 
 # Swing Dialog for Simulate Results
 class SimulateResultsDialog < STDialogWithOK
-  attr_accessor :random_value_label
-  attr_accessor :simulate_results_label
+  attr_accessor :random_value_label, :simulate_results_label
 
   def initialize
     super('Simulate Results')

@@ -3,11 +3,8 @@ require 'application_model'
 require 'ensure_json'
 #  model for the tree to do the quantum stack
 class QuantumStackModel < ApplicationModel
-  attr_accessor :substacks
+  attr_accessor :substacks, :stack_translation, :stackaddress, :bottom
   attr_reader :descriptor
-  attr_accessor :stack_translation
-  attr_accessor :stackaddress
-  attr_accessor :bottom
   alias bottom? bottom
 
   def quantum_stack; end

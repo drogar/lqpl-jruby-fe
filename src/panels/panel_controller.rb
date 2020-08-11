@@ -5,6 +5,7 @@ class PanelController < ApplicationController
   @controllers = {}
   class << self; attr_accessor :controllers end
   def self.inherited(subclass)
+    super
     controllers[class_name_to_sym(subclass)] = subclass
   end
 

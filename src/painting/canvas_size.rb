@@ -2,9 +2,7 @@ require 'size_computer'
 
 # calculate the sizes needed to display the tree
 class CanvasSize
-  attr_accessor :left_width
-  attr_accessor :right_width
-  attr_accessor :height
+  attr_accessor :left_width, :right_width, :height
 
   VERTICAL_NODE_SEPARATION = 50.0
   HORIZONTAL_NODE_SEPARATION = 55.0

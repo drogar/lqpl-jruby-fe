@@ -5,8 +5,8 @@ require 'config/architecture_category'
 require 'config/testing_fest'
 
 class PlatformConfiguration
-  attr_reader :arch
-  attr_reader :tester
+  attr_reader :arch, :tester
+
   def initialize(arch = ArchitectureCategory.new, tester = TestingFest.new)
     @arch = arch
     @tester = tester

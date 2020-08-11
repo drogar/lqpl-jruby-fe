@@ -1,5 +1,6 @@
 class TestingFest
   attr_reader :testing
+
   def initialize
     @testing = java.lang.System.get_property('com.drogar.testing.fest') == 'true'
   end

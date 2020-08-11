@@ -14,7 +14,7 @@ class Pathing
     return if @loadpath_set
 
     @loadpth_set = true
-    base_path = File.realpath(__dir__ + '/..')
+    base_path = File.realpath("#{__dir__}/..")
     DIRECTORIES.each { |d| $LOAD_PATH.unshift(File.join(base_path, d)) }
   end
 
@@ -23,6 +23,6 @@ class Pathing
   end
 
   def base_path
-    File.expand_path(__dir__ + '/..')
+    File.expand_path("#{__dir__}/..")
   end
 end

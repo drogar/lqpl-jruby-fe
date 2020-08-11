@@ -27,7 +27,7 @@ module LqplUtility
     end
 
     def exception_to_string(exception)
-      exception.to_s + "\n" + exception.backtrace.join("\n")
+      "#{exception}\n#{exception.backtrace.join("\n")}"
     end
 
     def show_error_dialog(title, message)

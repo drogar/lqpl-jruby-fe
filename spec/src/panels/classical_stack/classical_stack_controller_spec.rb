@@ -9,7 +9,7 @@ describe ClassicalStackController do
     end
   end
   it 'should raise an error when created with junk' do
-    expect { @c.update_classical_stack_data('junk') }. to raise_error JSON::ParserError, /junk/
+    expect { @c.update_classical_stack_data('junk') }.to raise_error JSON::ParserError, /junk/
   end
 
   specify { expect(@c.update_on_lqpl_model_trim).to be false }

@@ -1,7 +1,6 @@
 # Abstract out the generators for monkeybars, use template files
 class MonkeyGenerator
-  attr_accessor :name
-  attr_accessor :camel_name
+  attr_accessor :name, :camel_name
 
   def initialize(iname)
     @templates = {}
@@ -64,6 +63,6 @@ class MonkeyGenerator
   end
 
   def sub_separator_and_upcase(cname)
-    cname.gsub(%r{/(.?)}) { '::' + Regexp.last_match[1].upcase }
+    cname.gsub(%r{/(.?)}) { "::#{Regexp.last_match[1].upcase}" }
   end
 end

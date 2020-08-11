@@ -12,8 +12,7 @@ class Connection
   include Singleton
 
   LOCAL_CONNECTS = ['127.0.0.1', '::1', 'localhost'].freeze
-  attr_accessor :port
-  attr_accessor :connect_to
+  attr_accessor :port, :connect_to
   attr_reader :connection
 
   def initialize(port = nil)
@@ -69,7 +68,7 @@ class Connection
     begin
       _start_up_the_executable_in_a_process(location)
     rescue StandardError
-      return ['Unable to connect to ' + location]
+      return ["Unable to connect to #{location}"]
     end
     []
   end
@@ -92,8 +91,8 @@ class Connection
     LOCAL_CONNECTS.each do |addr|
       @connection = TCPSocket.new addr, @port
       return []
-    rescue Errno::ECONNREFUSED => e1
-      return ["Connect refused For #{addr}, exception: #{e1}"]
+    rescue Errno::ECONNREFUSED => e
+      return ["Connect refused For #{addr}, exception: #{e}"]
     rescue SocketError => e
       return ["Socket error for  #{addr}, exception: #{e} "]
     end
@@ -103,7 +102,7 @@ class Connection
     return @my_path if @my_path
 
     resolver = Monkeybars::Resolver.new(location: __FILE__)
-    @my_path ||= resolver.bare_path + '/../../'
+    @my_path ||= "#{resolver.bare_path}/../../"
   end
 
   private

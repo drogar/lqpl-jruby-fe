@@ -11,7 +11,7 @@ class ClassicalStackModel < ApplicationModel
     return '' if cs == []
 
     inside = cs.map(&:to_s).join('<br />')
-    '<html>' + inside + '</html>'
+    "<html>#{inside}</html>"
   end
 
   def to_a

@@ -7,7 +7,6 @@ class SimulateResultsView < ApplicationView
   map view: 'random_value_label.text', model: :random_value_text
   map view: 'simulate_results_label.text', model: :simulate_results_text
 
-
   def update(model, transfer)
     super
     @main_view_component.pack

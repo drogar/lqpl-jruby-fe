@@ -3,6 +3,7 @@ require 'parameter_generator'
 # handle creation of commands for lqpl emulator
 class EmulatorCommandInterpretor
   attr_accessor :connection
+
   def initialize(connection)
     self.connection = connection
   end

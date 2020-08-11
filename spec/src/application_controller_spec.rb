@@ -1,5 +1,5 @@
-require_relative '../../src/application_controller.rb'
-require_relative '../../src/communications/lqpl_emulator_server_connection.rb'
+require 'application_controller'
+require 'lqpl_emulator_server_connection'
 
 describe ApplicationController do
   describe 'lqpl_emulator_server_connection' do
@@ -13,7 +13,7 @@ describe ApplicationController do
       expect(l).to be_connected
     end
     it 'should return an unconnected instance with connect arg (1st) false' do
-      l = @ac.lqpl_emulator_server_connection false
+      l = @ac.lqpl_emulator_server_connection(connect: false)
       expect(l).not_to be_nil
       expect(l).not_to be_connected
     end

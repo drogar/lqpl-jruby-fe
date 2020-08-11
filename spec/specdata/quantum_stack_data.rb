@@ -1,12 +1,15 @@
 def make_multi_sstacks(id, diag, back, sstacks)
-  '{"qstack" : {"id": ' + id + ', "diagonal" : ' + diag + ', "substacks": [' +
-    sstacks.join(',') + '],' + back + '}}'
+  %({"qstack" : {"id": #{id}, "diagonal" : #{diag}, "substacks": [
+    #{sstacks.join(',')}],#{back}}})
 end
 
 def bottom_stack(id, diag, kind, count = 1)
-  '{"qstack" : {"id": ' + id + ', "diagonal" : ' + diag +
-    ', "substacks": [' + (['{"bottom":true}'] * count).join(', ') + '],' +
-    kind + '}}'
+  %({"qstack" : {"id": #{id}, "diagonal" : #{diag},
+    "substacks": [#{multi_bottom(count)}],#{kind}}})
+end
+
+def multi_bottom(count)
+  (['{"bottom":true}'] * count).join(', ')
 end
 
 NODE_ZERO = '"qnode" : {"value": 1.0}'.freeze

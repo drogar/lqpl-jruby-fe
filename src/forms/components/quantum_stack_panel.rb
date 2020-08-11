@@ -1,6 +1,6 @@
 require 'import_java'
 
-ImportJava.do_imports(context: self, awt: [ 'Color'] , swing: ['JLabel'])
+ImportJava.do_imports(context: self, awt: ['Color'], swing: ['JLabel'])
 
 # Class to handle the panel holding the quantum stack
 class QuantumStackPanel < ScrollPane

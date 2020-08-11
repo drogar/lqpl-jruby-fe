@@ -1,17 +1,12 @@
-$LOAD_PATH << __dir__ + '/lib/java'
-$LOAD_PATH << __dir__ + '/lib/ruby'
-$LOAD_PATH << __dir__ + '/devlib/ruby'
-# $LOAD_PATH << "./lqpl/lib/java"
-
-# $LOAD_PATH << "/Users/gilesb/programming/JRubyProjects/lqpl/lib/ruby"
+%w[/src /lib/java lib/ruby devlib/ruby out/lqpl_gui].each do |subdir|
+  $LOAD_PATH << __dir__ + subdir
+end
 
 require 'java'
 
-$CLASSPATH << '../out/lqpl_gui/'
-
-$LOAD_PATH << __dir__ + '/src'
-$CLASSPATH << __dir__ + '/lib/java/jruby-complete.jar'
-$CLASSPATH << __dir__ + '/lib/java/monkeybars-1.1.1.jar'
+%w[/lib/java/jruby-complete.jar /lib/java/monkeybars-1.3.3.jar /lib/java/foxtrot-core-4.0.jar].each do |sub|
+  $CLASSPATH <<  __dir__ + sub
+end
 # $CLASSPATH << File.expand_path(File.dirname(__FILE__))+"/out/production/lqpl_gui"
 
 # test to see if running gives edt violations
@@ -28,10 +23,10 @@ $CLASSPATH << __dir__ + '/lib/java/monkeybars-1.1.1.jar'
 # require '/Users/gilesb/programming/mixed/lqpl/GUI/devlib/ruby/fest_testing_imports'
 # end testing of edt violations
 
-require 'monkeybars-1.1.1.jar'
+require 'monkeybars-1.3.3.jar'
 require 'utility/swing_runner'
 
-ENV['PATH'] = File.expand_path(File.dirname(__FILE__) + '/bin') +
+ENV['PATH'] = File.expand_path("#{File.dirname(__FILE__)}/bin") +
               "#{File::PATH_SEPARATOR}#{ENV['PATH']}"
 
 begin
