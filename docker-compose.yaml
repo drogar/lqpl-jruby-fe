@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  emulator:
+    image: brettgiles/lqpl-servers:latest
+    environment:
+      - LQPL_SERVICE=EMULATOR
+    ports:
+      - '0.0.0.0:9502:9502'
+  compiler:
+    image: brettgiles/lqpl-servers:latest
+    environment:
+      - LQPL_SERVICE=COMPILER
+    ports:
+      - '0.0.0.0:7683:7683'
