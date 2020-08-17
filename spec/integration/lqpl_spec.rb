@@ -53,7 +53,7 @@ describe LqplController do
         @l.file_exit_action_performed
       end
       expect(@l.cmp).not_to be_connected
-      expect(@l.lqpl_emulator_server_connection(false)).not_to be_connected
+      expect(@l.lqpl_emulator_server_connection(connect: false)).not_to be_connected
     end
   end
   describe 'sub handlers' do
@@ -75,7 +75,7 @@ describe LqplController do
         subject.load
         subject.close
         expect(subject.cmp).not_to be_connected
-        expect(subject.lqpl_emulator_server_connection(false)).not_to be_connected
+        expect(subject.lqpl_emulator_server_connection(connect: false)).not_to be_connected
       end
     end
     describe 'initialize_sub_controllers' do

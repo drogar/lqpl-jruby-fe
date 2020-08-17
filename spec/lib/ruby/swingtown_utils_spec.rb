@@ -32,7 +32,7 @@ describe Swingtown do
           fs = ::File::SEPARATOR
           expect(Swingtown.path('a')).to eq  "#{Swingtown::PATH}a"
           expect(Swingtown.path('a', 'b')).to eq "#{Swingtown::PATH}a#{fs}b"
-          expect(Swingtown.path('a', 'b', 'cdefg')).to eq "#{Swingtown::LIBPATH}a#{fs}b#{fs}cdefg"
+          expect(Swingtown.path('a', 'b', 'cdefg')).to eq "#{Swingtown::PATH}a#{fs}b#{fs}cdefg"
         end
       end
     end

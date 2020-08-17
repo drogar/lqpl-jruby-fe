@@ -1,6 +1,7 @@
 require 'config/pathing'
 
 BASE_PATH = '/Users/gilesb/Dropbox/programming/mixed/lqpl-fe-jruby/src/'.freeze
+FILE_SEP = '/'.freeze
 
 describe Pathing do
   it 'is valid' do
@@ -15,7 +16,7 @@ describe Pathing do
        utility].each do |dir|
       it "contains the #{dir} subdir" do
         Pathing.initialize_loadpath
-        expect($LOAD_PATH).to include(BASE_PATH  + dir)
+        expect($LOAD_PATH).to include(BASE_PATH + dir)
       end
     end
   end
@@ -28,7 +29,7 @@ describe Pathing do
     end
     describe :base_path do
       it 'is the path of the source co' do
-        expect(subject.base_path).to(
+        expect(subject.base_path + FILE_SEP).to(
           eq(BASE_PATH)
         )
       end
