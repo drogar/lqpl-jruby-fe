@@ -13,7 +13,7 @@ class ClassicalDescriptorModel < AbstractDescriptorModel
   end
 
   def initialize(in_string)
-    super
+    super()
     fail_message = "Invalid Classical: #{in_string}"
     json_c = EnsureJSON.new(in_string).as_json
     @value = json_c[:classical]

@@ -16,7 +16,7 @@ class QubitDescriptorModel < AbstractDescriptorModel
   VALID_PAIRS = { 'ZZ' => [0, 0], 'OO' => [1, 1], 'ZO' => [0, 1], 'OZ' => [1, 0] }.freeze
 
   def initialize(in_string)
-    super
+    super()
     fm = "Invalid Qubit: #{in_string}"
     json_q = EnsureJSON.new(in_string).as_json
     raise ModelCreateError, fm unless json_q[:qubit]

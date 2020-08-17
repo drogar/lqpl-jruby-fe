@@ -5,8 +5,7 @@ class AbstractDescriptorModel < ApplicationModel
   attr_accessor :value, :name
 
   def initialize
-    super
-    raise ModelCreateError
+    super()
   end
 
   def substack_labels

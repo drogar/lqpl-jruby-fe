@@ -2,9 +2,6 @@ require 'quantum_stack_model'
 
 describe AbstractDescriptorModel do
   subject { AbstractDescriptorModel }
-  it 'should only be created by the factory' do
-    expect { AbstractDescriptorModel.new }.to raise_error(ModelCreateError)
-  end
   it 'has a value accessor' do
     expect(subject.instance_methods).to include(:value)
     expect(subject.instance_methods).to include(:value=)

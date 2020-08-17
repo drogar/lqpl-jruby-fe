@@ -28,7 +28,7 @@ build = namespace :build do
     ant.jar destfile: 'out/lqpl_gui.jar', basedir: 'out/lqpl_gui', manifest: 'Manifest'
   end
   desc 'Build the lqpl system'
-  task all: [:jar, :server, 'out/lib/java'] do
+  task all: [:jar, 'out/lib/java'] do
     redist_jars.each { |jar| cp jar, 'out/lib/java/', preserve: true }
   end
 end
@@ -76,7 +76,7 @@ namespace :dist do
     bin_dist_includes.each do |f|
       cp_r f.to_s, "out/lqpl-#{LqplVersion::LQPL_GUI_VERSION}-bin-#{tech}/", preserve: true
     end
-    copy_server_bin "out/lqpl-#{LqplVersion::LQPL_GUI_VERSION}-bin-#{tech}/bin/"
+    # copy_server_bin "out/lqpl-#{LqplVersion::LQPL_GUI_VERSION}-bin-#{tech}/bin/"
     $stdout << "Creating tar file: lqpl-#{LqplVersion::LQPL_GUI_VERSION}-bin-#{tech}.tgz\n"
     sh "(cd out ; tar #{tar_options} -czf lqpl-#{LqplVersion::LQPL_GUI_VERSION}-bin-#{tech}.tgz "\
        " lqpl-#{LqplVersion::LQPL_GUI_VERSION}-bin-#{tech})"
@@ -107,7 +107,7 @@ namespace :dist do
       cp 'icons/lqpl.icns', 'out/LQPLEmulator.app/Contents/Resources'
       cp 'out/lqpl_gui.jar', 'out/LQPLEmulator.app/Contents/Resources/Java'
       cp_r 'lib/java', 'out/LQPLEmulator.app/Contents/Resources/Java/lib/'
-      copy_server_bin 'out/LQPLEmulator.app/Contents/Resources/Java/bin/'
+      # copy_server_bin 'out/LQPLEmulator.app/Contents/Resources/Java/bin/'
     end
   end
 end
