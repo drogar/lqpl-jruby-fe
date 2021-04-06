@@ -35,14 +35,10 @@ class LqplMenu
   end
 
   def self.mac_prepare_exit_and_about
-    app = import_and_return_eawt_application
-    app.about_handler = AboutController.instance
-    app.quit_handler = ExitHandler.instance
-  end
+    desktop_app = java.awt.Desktop.desktop
 
-  def self.import_and_return_eawt_application
-    java_import com.apple.eawt.Application
-    Application.application
+    desktop_app.about_handler = AboutController.instance
+    desktop_app.quit_handler = ExitHandler.instance
   end
 
   def self.non_mac_prepare_exit_and_about(add_listener)

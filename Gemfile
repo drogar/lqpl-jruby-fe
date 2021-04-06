@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'monkeybars', '~>1.1'
+gem 'monkeybars', '~>1.3', source: 'http://gems.neurogami.com/'
 gem 'rake'
 gem 'swingset', source: 'http://gems.neurogami.com/'
 

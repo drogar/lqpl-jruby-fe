@@ -1,3 +1,4 @@
+puts $LOAD_PATH
 require 'lqpl_controller'
 require 'swing_runner'
 
